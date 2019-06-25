@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 8888服务去请求8887服务，这就是一个跨域的请求 通过在8887设置跨域的头来解决
+        var xhr = new XMLHttpRequest()
+        xhr.open("GET", "http://127.0.0.1:8887/")
+        xhr.send()
+    </script>
+    <!-- 在标签上写src是允许跨域的 img  link  script a -->
+    <!-- jsonp实现的原理就是在script上加上链接，这个链接访问了服务器上的内容 ，
+    因为返回的内容时可控的，我们可以在返回的内容是上，加上script标签的代码
+-->
+    <script src="http://127.0.0.1:8887/">
+        // 通过jsonp的方式解决跨域
+    </script>
+</body>
+
+</html>
